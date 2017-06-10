@@ -1,0 +1,22 @@
+#chatroom{
+    padding-top:40px;
+    list-style: none;
+    overflow-y: auto;
+    background-color: #e3e3e3;
+}
+#chatroom li{
+    margin-bottom:50px;
+    position: relative;
+}
+
+#chatroom i{
+    position: absolute;
+    left: 0;
+    top:-30px;
+}
+#chatroom li span{
+    font-size: 18px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}

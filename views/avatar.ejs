@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>avatar</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="css/lib/jquery.Jcrop.css"/>
+    <link rel="stylesheet" href="css/avatar.css"/>
+</head>
+<body>
+    <div id="layer">文件上传中请等待...</div>
+    <div class="container">
+        <div class="alert alert-info" role="alert">
+            1.请上传您的新头像
+        </div>
+        <form id="uploadAvatarForm" action="uploadAvatar" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>选择图片</label>
+                <input type="file" name="avatar" id="avatar"/>
+            </div>
+            <button type="button" class="btn btn-primary" id="submitUpload">上传</button>
+        </form>
+        <div class="alert alert-danger" role="alert" style="display:none;">
+        </div>
+        <div class="alert alert-info" role="alert">
+            2.请裁剪您的头像
+        </div>
+        <div class="row">
+            <div class="span12">
+                <div class="jc-demo-box">
+                    <% if ( !!avatar ) { %>
+                        <img src="<%= avatar %>" id="target"/>
+                    <% } %>
+                    <% if ( !avatar ) { %>
+                        <img src="/timg.jpg" id="target"/>
+                    <% } %>
+                    <form id="coords" class="coords">
+                        <div class="inline-labels">
+                            <label>X1 <input type="text" size="4" id="x1" name="x1" /></label>
+                            <label>Y1 <input type="text" size="4" id="y1" name="y1" /></label>
+                            <!--<label>X2 <input type="text" size="4" id="x2" name="x2" /></label>
+                            <label>Y2 <input type="text" size="4" id="y2" name="y2" /></label>-->
+                            <label>W <input type="text" size="4" id="w" name="w" /></label>
+                            <label>H <input type="text" size="4" id="h" name="h" /></label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-success" id="submitCorp">完成</button>
+    </div>
+</body>
+</html>
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/lib/jquery-form.js"></script>
+<script src="js/lib/jquery.Jcrop.min.js"></script>
+<script src="js/avatar.js"></script>
